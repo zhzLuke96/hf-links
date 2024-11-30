@@ -2,7 +2,7 @@
 // @name            HF 镜像跳转
 // @name:en         HF Mirror Redirect
 // @namespace       https://github.com/zhzLuke96/hf-links/hf-links
-// @version         v1.0
+// @version         v1.1
 // @description     在 Hugging Face 仓库页面添加镜像跳转按钮
 // @description:en  Add mirror redirect buttons on Hugging Face repository pages.
 // @author          zhzluke96
@@ -111,6 +111,22 @@
       },
     });
     $header.appendChild(node);
+
+    // NOTE: header 不知道为啥 rerender... 所以要检测一下，最多检测 10 次
+    // NOTE: 用 MutationObserver 可能好点，但是卡死了... 所以用 interval
+
+    let check_times = 0;
+    const timer = setInterval(() => {
+      if (check_times >= 10) {
+        clearInterval(timer);
+        return;
+      }
+      check_times++;
+      if ($header.innerHTML.includes(button.href)) {
+        return;
+      }
+      $header.appendChild(node);
+    }, 500);
   }
 
   exit("按钮添加成功");
