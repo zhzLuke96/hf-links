@@ -72,8 +72,10 @@
       const match = location.pathname.match(/^\/datasets\/([^/]+)\/([^/]+)/);
       if (match) {
         return {
+          kind: "datasets",
           repo_owner: match[1],
           repo_name: match[2],
+          pathname: `/datasets/${match[1]}/${match[2]}`,
         };
       }
     }
@@ -82,23 +84,25 @@
     const match = location.pathname.match(/^\/([^/]+)\/([^/]+)/);
     if (match) {
       return {
+        kind: "models",
         repo_owner: match[1],
         repo_name: match[2],
+        pathname: `/${match[1]}/${match[2]}`,
       };
     }
     return {};
   };
 
-  const { repo_owner, repo_name } = parse_hf_repo();
+  const { pathname, repo_name } = parse_hf_repo();
 
-  if (!repo_name || !repo_owner) {
+  if (!pathname || !repo_name) {
     exit("解析repo名字失败");
     return;
   }
 
   const buttons = [
     {
-      href: `https://hf-mirror.com/${repo_owner}/${repo_name}`,
+      href: `https://hf-mirror.com${pathname}`,
       label: "hf-mirror",
       icon: "🤗",
     },
