@@ -92,8 +92,13 @@
       icon: "🤗",
     },
     {
+      // href: `https://modelscope.cn/search?search=${encodeURIComponent(
+      //   `${repo_owner}/${repo_name}`
+      // )}`,
+
+      // NOTE: 只搜索 repo name 因为一般都是搬运， owner 不一样
       href: `https://modelscope.cn/search?search=${encodeURIComponent(
-        `${repo_owner}/${repo_name}`
+        `${repo_name}`
       )}`,
       label: "model-scope",
       icon: "👾",
