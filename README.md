@@ -16,11 +16,11 @@
 
 ## 使用方法
 
-1. 打开 [Hugging Face](https://huggingface.co/) 任意仓库页面（例如：https://huggingface.co/username/repository）。
+1. 打开 [Hugging Face](https://huggingface.co/) 任意仓库页面（例如：https://huggingface.co/google/gemma-2-27b-it ）。
 2. 页面顶部会显示镜像跳转按钮，点击对应按钮即可跳转到相关镜像资源。
 
 ## 预览
-![示例](./snap.png)
+![示例](https://github.com/zhzLuke96/hf-links/raw/main/snap.png)
 
 ## 开发与贡献
 
