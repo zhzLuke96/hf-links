@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name            HF 镜像跳转
 // @name:en         HF Mirror Redirect
-// @namespace       https://github.com/zhzLuke96/hf-links/hf-links
-// @version         v1.1
+// @namespace       https://github.com/zhzLuke96/hf-links
+// @version         v1.2
 // @description     在 Hugging Face 仓库页面添加镜像跳转按钮
 // @description:en  Add mirror redirect buttons on Hugging Face repository pages.
 // @author          zhzluke96
@@ -10,9 +10,9 @@
 // @icon            https://www.google.com/s2/favicons?sz=64&domain=huggingface.co
 // @grant           none
 // @license         MIT
-// @updateURL       https://github.com/zhzLuke96/hf-links/hf-links/raw/main/hf-links.user.js
-// @downloadURL     https://github.com/zhzLuke96/hf-links/hf-links/raw/main/hf-links.user.js
-// @supportURL      https://github.com/zhzLuke96/hf-links/hf-links/issues
+// @updateURL       https://github.com/zhzLuke96/hf-links/raw/main/hf-links.user.js
+// @downloadURL     https://github.com/zhzLuke96/hf-links/raw/main/hf-links.user.js
+// @supportURL      https://github.com/zhzLuke96/hf-links/issues
 // ==/UserScript==
 
 (function () {
