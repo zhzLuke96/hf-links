@@ -2,7 +2,7 @@
 // @name            HF 镜像跳转
 // @name:en         HF Mirror Redirect
 // @namespace       https://github.com/zhzLuke96/hf-links
-// @version         v1.2
+// @version         v1.3
 // @description     在 Hugging Face 仓库页面添加镜像跳转按钮
 // @description:en  Add mirror redirect buttons on Hugging Face repository pages.
 // @author          zhzluke96
@@ -67,6 +67,17 @@
   };
 
   const parse_hf_repo = () => {
+    {
+      // 有可能是 datasets
+      const match = location.pathname.match(/^\/datasets\/([^/]+)\/([^/]+)/);
+      if (match) {
+        return {
+          repo_owner: match[1],
+          repo_name: match[2],
+        };
+      }
+    }
+
     // 从 URL 中解析仓库名和所有者
     const match = location.pathname.match(/^\/([^/]+)\/([^/]+)/);
     if (match) {
